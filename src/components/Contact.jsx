@@ -72,9 +72,9 @@ const Contact = () => {
                 <Col sm={6} className="px-1">
                   <input type="tel" value={formDetails.phone} placeholder="Phone no." onChange={e => onFormUpdate('phone', e.target.value)} />
                 </Col>
-                <Col sm={6} className="px-1">
+                <Col sm={12} className="px-1">
                   <textarea row="6" value={formDetails.message} placeholder="Message" onChange={e => onFormUpdate("message", e.target.value)} />
-                  <button type='submit'><span>{buttonText}</span></button>
+                  <button type='submit' className="send" ><span>{buttonText}</span></button>
                 </Col>
 
                 {status.message &&
