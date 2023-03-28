@@ -539,13 +539,13 @@ justify-content: flex-end;
   font-weight: bold;
 }
 
-.projects .headline-wrapper {
+.projects .headline-wrapper, .contact .headline-wrapper {
   text-align: center;
   display:  flex;
   justify-content: center;
-
 }
-.projects .headline {
+
+.projects .headline, .contact .headline  {
   text-transform: uppercase;
   padding: 15px 85px;
   font-size: 45px;

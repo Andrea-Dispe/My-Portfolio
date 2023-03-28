@@ -11,10 +11,7 @@ const Footer = () => {
     <footer className="footer">
       <Container>
         <Row className="align-items-center">
-          <Col sm={6}>
-          <img src={logo} alt="logo" />
-          </Col>
-          <Col sm={6} className="text-center text-sm-end">
+          <Col sm={12} className="text-center">
             <div className="social-icon">
               <a href="">
                 <img src={navIcon1}/>

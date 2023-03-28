@@ -31,6 +31,9 @@ const Skills = () => {
   return (
     <section className="skills" id='skills' >
       <Container>
+      <div className='headline-wrapper'>
+          <h1 className="headline">Contact Me</h1>
+        </div>
         <Row>
           <Col>
 
@@ -43,28 +46,28 @@ const Skills = () => {
                 className='skill-slider'
               >
                 <div className="item">
-                  <img src={meter1} alt="Image" />
+                  <img src={meter1} />
                   <h5>Web Development</h5>
                 </div>
                 <div className="item">
-                  <img src={meter2} alt="Image" />
+                  <img src={meter2} />
                   <h5>Brand stucazz</h5>
                 </div>
                 <div className="item">
-                  <img src={meter3} alt="Image" />
+                  <img src={meter3} />
                   <h5>Web Development</h5>
                 </div>
 
                 <div className="item">
-                  <img src={meter1} alt="Image" />
+                  <img src={meter1} />
                   <h5>Web Development</h5>
                 </div>
                 <div className="item">
-                  <img src={meter2} alt="Image" />
+                  <img src={meter2} />
                   <h5>Web Development</h5>
                 </div>
                 <div className="item">
-                  <img src={meter3} alt="Image" />
+                  <img src={meter3} />
                   <h5>Web Development</h5>
                 </div>
 
