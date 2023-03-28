@@ -63,10 +63,15 @@ const Projects = () => {
     console.log('visibleProjects: ', visibleProjects);
   }, [])
 
-  const handleClick = (tag) => {
-    const proj = projects.filter(project => project.tags.includes(tag))
-    setVisibleProjects(proj);
-    setActiveItem(tag)
+  const handleChangeTagProject = (tag) => {
+    if(tag === 'All') {
+      setVisibleProjects(projects);
+      setActiveItem(tag)
+    } else {
+      const proj = projects.filter(project => project.tags.includes(tag))
+      setVisibleProjects(proj);
+      setActiveItem(tag)
+    }
     console.log('activeItem: ', activeItem);
   }
 
@@ -79,8 +84,13 @@ const Projects = () => {
         <Row>
           <Col>
             <div className="tags-container">
+              <div className={activeItem === 'All' ? 'tag-button tag-button-active' : 'tag-button'} onClick={() => handleChangeTagProject('All')}>
+                <span className="tag">
+                  All
+                </span>
+              </div>
               {tags.map((tag, index) => (
-                <div className={activeItem === tag ? 'tag-button tag-button-active' : 'tag-button'} onClick={() => handleClick(tag)}>
+                <div className={activeItem === tag ? 'tag-button tag-button-active' : 'tag-button'} onClick={() => handleChangeTagProject(tag)}>
                   <span className="tag">
                     {tag}
                   </span>
@@ -115,7 +125,7 @@ const Projects = () => {
                     <div className="tags">
                       <span className="subtitle">Tags: </span>
                       {project.tags.map((tag, index) => (
-                        (index === project.tags.length - 1 ?  <span>{tag}</span> :  <span>{tag}, </span> )
+                        (index === project.tags.length - 1 ? <span>{tag}</span> : <span>{tag}, </span>)
                       ))}
                     </div>
                     <div className="tech">
@@ -123,10 +133,10 @@ const Projects = () => {
                       <span> {project.techStack} </span>
                     </div>
                     <div className="github-link">
-                    <span className="subtitle">Source code: </span>
+                      <span className="subtitle">Source code: </span>
 
                       <a href={project.projectUrl}>
-                      <img className="github-icon" src={github} alt={`Icon Github as external link to github project ${project.title}`} />
+                        <img className="github-icon" src={github} alt={`Icon Github as external link to github project ${project.title}`} />
                       </a>
                     </div>
                   </div>

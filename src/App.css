@@ -108,6 +108,7 @@ nav.navbar .navbar-nav .nav-link.navbar-link {
 nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
 nav.navbar .navbar-nav a.nav-link.navbar-link.active {
     opacity: 1;
+    text-decoration: underline;
 }
 span.navbar-text {
     display: flex;
@@ -502,8 +503,8 @@ justify-content: flex-end;
   margin-right: 10px;
   transform: skew(-20deg);
   background-color: #AA367C;
-
-
+  text-align: center;
+  min-width: 100px;
 }
 
 .tag-button:hover {
