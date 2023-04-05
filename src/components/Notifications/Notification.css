@@ -1,0 +1,85 @@
+.notification-wrapper {
+  position: fixed;
+  top: 120px;
+  right: 10px;
+  width: 300px;
+}
+
+.notification-item {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgb(0, 0, 0);
+  height: 65px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  animation: SlideLeft 0.7s;
+  animation-fill-mode: forwards;
+  width: 300px;
+  z-index: 9999;
+}
+
+
+.notification-item p,
+.notification-item h3 {
+  margin: 0px;
+  font-size: 18px;
+  padding: 17px 15px 10px 15px;
+  /* font-size: .80%; */
+  color: black;
+
+}
+
+.notification-item .bar {
+  height: 8px;
+  margin-top: 6px;
+}
+
+.notification-item.success .bar {
+  background-color: #3B82F6;
+}
+
+.notification-item.error .bar {
+  background-color: red;
+
+}
+
+.notification-item.exit {
+  animation: slideRight 1s;
+  animation-fill-mode: forwards;
+}
+
+
+.green-check {
+  margin-right: 10px;
+  font-size: 25px;
+  margin-top: -2px;
+  color: #00FF00;
+}
+
+.red-xmark {
+  margin-right: 10px;
+  margin-top: -2px;
+  font-size: 25px;
+
+  color: #ff0000;
+}
+
+@keyframes SlideLeft {
+  0% {
+    margin-left: 120%;
+  }
+
+  100% {
+    margin-left: 0;
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    margin-left: 0;
+  }
+
+  100% {
+    margin-left: 120%;
+  }
+}

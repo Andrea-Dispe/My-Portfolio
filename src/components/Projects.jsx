@@ -14,38 +14,39 @@ const lorem = "Lorel;ds lvds Lorem Ipsum.";
 const projects = [
   {
     title: 'Rick and Morty',
-    description: 'Projectd escription',
+    description: `This app has been built without exetrnal libraries.
+    It queries the external API and displays the content on clickable cards. Each card clicked opens a modal with information coming from the API.
+    Each card can be set to be a favourite and they will be visibile in its relative page.
+    The search bar and pagination filter the content accordingly.`,
     tags: ['React'],
-    techStack: '',
     imgUrl: ProjImg2,
-    projectUrl: ''
+    projectUrl: 'https://github.com/Andrea-Dispe/Rick_and_Morty.git',
+    weight: '6'
   },
   {
     title: 'Husky DeFi',
     description: 'Projectd escription',
     tags: ['React', 'Web3.js'],
-    techStack: '',
     imgUrl: ProjImg1,
-    projectUrl: ''
+    projectUrl: '',
+    weight: '9'
   },
   {
     title: 'Login Form',
     description: 'Projectd escription',
     tags: ['React', 'Node'],
-    techStack: '',
     imgUrl: ProjImg3,
-    projectUrl: ''
+    projectUrl: '',
+    weight: '10'
   }
 ]
 
-const sortProjectsByTitle = (projects) => {
+const sortProjectsByWeight = (projects) => {
   return projects.sort((a, b) => {
-    const titleA = a.title.toUpperCase();
-    const titleB = b.title.toUpperCase();
-    if (titleA < titleB) {
+    if (a.weight - b.weight) {
       return -1;
     }
-    if (titleA > titleB) {
+    if (b.weight - a.weight) {
       return 1;
     }
     return 0;
@@ -54,14 +55,10 @@ const sortProjectsByTitle = (projects) => {
 
 
 const Projects = () => {
-  const [visibleProjects, setVisibleProjects] = useState(sortProjectsByTitle(projects));
-  const [activeItem, setActiveItem] = useState('')
+  const [visibleProjects, setVisibleProjects] = useState(sortProjectsByWeight(projects));
+  const [activeItem, setActiveItem] = useState('All')
 
-  const tags = ['React', 'Node', 'Web3.js'];
-
-  useEffect(() => {
-    console.log('visibleProjects: ', visibleProjects);
-  }, [])
+  const tags = ['All', 'React', 'Node', 'Web3.js'];
 
   const handleChangeTagProject = (tag) => {
     if(tag === 'All') {
@@ -72,7 +69,6 @@ const Projects = () => {
       setVisibleProjects(proj);
       setActiveItem(tag)
     }
-    console.log('activeItem: ', activeItem);
   }
 
   return (
@@ -84,11 +80,6 @@ const Projects = () => {
         <Row>
           <Col>
             <div className="tags-container">
-              <div className={activeItem === 'All' ? 'tag-button tag-button-active' : 'tag-button'} onClick={() => handleChangeTagProject('All')}>
-                <span className="tag">
-                  All
-                </span>
-              </div>
               {tags.map((tag, index) => (
                 <div className={activeItem === tag ? 'tag-button tag-button-active' : 'tag-button'} onClick={() => handleChangeTagProject(tag)}>
                   <span className="tag">
@@ -120,22 +111,19 @@ const Projects = () => {
                     <div className="title">{project.title}</div>
                     <div className="description">
                       <span className="subtitle">Description: </span>
-                      <span> {lorem} </span>
+                      <span> {project.description} </span>
                     </div>
+                    <br />
                     <div className="tags">
-                      <span className="subtitle">Tags: </span>
+                      <span className="subtitle">Tech Stack: </span>
                       {project.tags.map((tag, index) => (
                         (index === project.tags.length - 1 ? <span>{tag}</span> : <span>{tag}, </span>)
                       ))}
                     </div>
-                    <div className="tech">
-                      <span className="subtitle">Tech stack: </span>
-                      <span> {project.techStack} </span>
-                    </div>
                     <div className="github-link">
                       <span className="subtitle">Source code: </span>
 
-                      <a href={project.projectUrl}>
+                      <a href={project.projectUrl} target="_blank">
                         <img className="github-icon" src={github} alt={`Icon Github as external link to github project ${project.title}`} />
                       </a>
                     </div>
