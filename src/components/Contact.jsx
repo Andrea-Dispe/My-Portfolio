@@ -2,8 +2,9 @@ import React, { useState, useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import emailjs from '@emailjs/browser';
 import { useAddNotification } from './Notifications/NotificationProvider';
-
 import contactImg from '../assets/img/contact-img.svg'
+import './Contact.css'
+
 
 const Contact = () => {
   const form = useRef()
@@ -45,7 +46,7 @@ const Contact = () => {
     setButtontext('Sending...')
     emailjs.sendForm('service_tt3adfi', 'template_7pf68ki', form.current, 'w6qDx-AE1Fi2nMrIY')
       .then((res) => {
-        console.log(res);
+        console.log('res',res);
         setButtontext('Send');
 
         // clean form

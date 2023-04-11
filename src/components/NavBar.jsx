@@ -48,11 +48,6 @@ const NavBar = () => {
               <a href="https://github.com/Andrea-Dispe" target="_blank"><img src={github} alt="github social icon that links to my github profile" /></a>
             </div>
             <Nav.Link className='connect' href="#contact">Let's Connect!</Nav.Link>
-            {/* <button
-              className='connect'
-              onClick={() => console.log('connect')}>
-              Let's Connect!
-            </button> */}
           </span>
         </Navbar.Collapse>
       </Container>

@@ -1,19 +1,45 @@
 import React from 'react'
+import github from "../assets/img/github.svg"
+import './ProjectCard.css'
 
-import { Col } from "react-bootstrap";
-
-const ProjectCard = ({ title, description, imgUrl }) => {
-  console.log('imgUrl: ', imgUrl);
+const ProjectCard = ({ project, index }) => {
   return (
-    <Col sm={6} md={4}>
-      <div className="proj-imgbx">
-        <img src={imgUrl} alt="something" />
-        <div className="proj-txtx">
-          <h4>{title}</h4>
-          <span>{description}</span>
+    <div key={index} className="project">
+      <div className="thumb">
+        <a href={project.projectShowUrl} target='_blank'>
+          <img src={project.imgUrl  } alt={project.title} />
+        </a>
+      </div>
+      <div className="info-wrapper">
+        <div className="title">{project.title}</div>
+        <div className="description">
+          <span className="subtitle">Description: </span>
+          <br />
+          <span> {project.description} </span>
+          <ul>
+            {project.features.map((feature, index) => (
+              <li key={index}>{feature}</li>
+            ))}
+          </ul>
+        </div>
+        <div className="tags">
+          <span className="subtitle">Tech Stack: </span>
+          {project.tags.map((tag, index) => (
+            (index === project.tags.length - 1 ? <span>{tag}</span> : <span>{tag}, </span>)
+          ))}
+        </div>
+        <div className="subtitle">View Project:
+        <a href={project.projectShowUrl} target="_blank" rel="noopener noreferrer"> {project.projectShowUrl}</a>
+        </div>
+        <div className="github-link">
+          <span className="subtitle">Source code: </span>
+          <a href={project.sourceCodeUrl} target="_blank" rel="noopener noreferrer">
+            <img className="github-icon" src={github} alt={`Icon Github as external link to github project ${project.title}`} />
+          </a>
         </div>
       </div>
-    </Col>
+    </div>
+
   );
 }
 

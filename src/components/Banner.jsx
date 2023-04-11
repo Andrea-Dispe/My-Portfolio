@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from "react-bootstrap";
-import { ArrowRightCircle } from "react-bootstrap-icons"
 import JsLogo from "../assets/img/js_logo.svg"
 import PhpLogo from "../assets/img/php.svg"
 import ReactLogo from "../assets/img/react.svg"
 import NodeLogo from "../assets/img/nodejs.svg"
 import ReduxLogo from "../assets/img/redux.svg"
-
+import './Banner.css';
 import 'animate.css';
 
 const Banner = () => {
@@ -15,7 +14,7 @@ const Banner = () => {
   const [logo, setLogo] = useState(JsLogo)
   const [vis, setVis] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false)
-  const toRotate = ["Web Developer", "Web Designer", "Ui/UX Designer"]
+  const toRotate = ["Full-Stack Dev", "Web Designer"]
   const logoToRotateArray = [JsLogo, PhpLogo, ReactLogo, NodeLogo, ReduxLogo]
   const [text, setText] = useState('')
   const period = 2000
@@ -81,7 +80,7 @@ const Banner = () => {
             <div>
               <span className="tagline">Welcome to my portfolio</span>
               <h1>{`Hello, I am Andrea `}
-                <span className="wrap">{text}</span>
+                <div className="wrap">{text}</div>
               </h1>
               <p>Scroll down to see some of my projects:</p>
               <div className="tech-skills-container">
@@ -89,9 +88,6 @@ const Banner = () => {
                   <img src={icon} alt="icon tech skill" className="tech-skills-icon" />
                 ))}
               </div>
-              {/* <button onClick={() => { console.log('connect') }}> Let's Connect
-                    <ArrowRightCircle size={25}></ArrowRightCircle>
-                  </button> */}
             </div>
           </Col>
           <Col xs={12} md={6} xl={5}>
