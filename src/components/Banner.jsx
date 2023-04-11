@@ -82,12 +82,12 @@ const Banner = () => {
               <h1>{`Hello, I am Andrea `}
                 <div className="wrap">{text}</div>
               </h1>
-              <p>Scroll down to see some of my projects:</p>
               <div className="tech-skills-container">
                 {logoToRotateArray.map(icon => (
                   <img src={icon} alt="icon tech skill" className="tech-skills-icon" />
                 ))}
               </div>
+              <div className='cta-see-projects'>Scroll down to see some of my projects:</div>
             </div>
           </Col>
           <Col xs={12} md={6} xl={5}>

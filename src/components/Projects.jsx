@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import colorSharp2 from "../assets/img/color-sharp2.png"
 import ProjectCard from "./ProjectCard"
-
 import projectsData from "../projectsData.js"
 import "./Projects.css"
 import 'animate.css';

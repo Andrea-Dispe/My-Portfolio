@@ -2,7 +2,7 @@
 import RickAndMortyThumb from "./assets/img/rick-and-morty-thumb.png";
 import LoginSignupThumb from "./assets/img/login-signup-thumb.png";
 import MyDefiThumb from "./assets/img/my-defi-thumb.gif";
-import MyPortfolioThumb from "./assets/img/my-portfolio.png"
+import MyPortfolioThumb from "./assets/img/my-portfolio-thumb.gif"
 
 const projects = [
   {
