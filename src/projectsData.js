@@ -1,6 +1,6 @@
 
 import RickAndMortyThumb from "./assets/img/rick-and-morty-thumb.png";
-import LoginSignupThumb from "./assets/img/login-signup-thumb.png";
+import LoginSignupThumb from "./assets/img/login-signup-thumb.gif";
 import MyDefiThumb from "./assets/img/my-defi-thumb.gif";
 import MyPortfolioThumb from "./assets/img/my-portfolio-thumb.gif"
 
@@ -37,13 +37,13 @@ const projects = [
     weight: 9
   },
   {
-    title: 'Login Signup App',
-    description: `This is a full-fledged login and signup app that has everything it needs to.`,
+    title: 'Login Sign-up App',
+    description: `This is a full-fledged login and sign-up app that has everything it needs to.`,
     features: [
-      `Signup form with inputs validation and sanitization.`,
-      `Login form with inputs validation and sanitization.`,
-      `Account email verfication.`,
-      `Password forgot and retrive process through email.`,
+      `Sign-up form with inputs validation and sanitation.`,
+      `Login form with inputs validation and sanitation.`,
+      `Account email verification.`,
+      `Password forgot and retrieve process through email.`,
       `Notifications available and data saved into Mongo Atlas`
     ],
     tags: ['React', 'Node'],
