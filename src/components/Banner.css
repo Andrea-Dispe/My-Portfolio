@@ -1,4 +1,3 @@
-
 /************ Banner Css ************/
 .banner {
   margin-top: 0;
@@ -30,6 +29,7 @@
   margin-bottom: 20px;
   display: block;
   min-height: 130px;
+  margin-top: 70px;
 }
 
 .banner p {
@@ -97,5 +97,110 @@
 }
 
 .cta-see-projects {
+  font-size: 20px;
   margin-top: 20px;
+  position: relative;
 }
+
+.curriculum-download {
+  font-size: 35px;
+  margin-top: 40px;
+
+}
+
+.pdf-icon {
+  margin-left: 10px;
+  width: 35px;
+}
+
+
+.pdf-icon:hover {
+
+  animation: pdfIcon 0.3s forwards;
+  /* animation-fill-mode: forwards; */
+  animation-iteration-count: 2;
+
+
+}
+
+
+.cta-see-projects span {
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  width: 21px;
+  height: 21px;
+  margin-left: -5px;
+  border-left: 4px solid #fff;
+  border-bottom: 4px solid #fff;
+  transform: rotate(-45deg);
+  animation: scrollArrow 2s infinite;
+  box-sizing: border-box;
+}
+
+@keyframes scrollArrow {
+  0% {
+    transform: rotate(-45deg) translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(-45deg) translate(-7px, 7px);
+    opacity: 0;
+  }
+}
+
+@keyframes pdfIcon {
+  0% {
+    transform: rotate(0deg) translate(0, 0);
+  }
+  25%{
+    transform: rotate(5deg) translate(2px, 0);
+  }
+  50% {
+    transform:  rotate(0deg) translate(0, 0);
+  }
+  75%{
+    transform: rotate(-5deg) translate(-2px, 0);
+  }
+  100%{
+    transform: rotate(0deg);
+  }
+}
+
+/*
+@keyframes pdfIcon {
+  0% {
+    transform: rotate(0deg);
+  }
+  12%{
+    transform: rotate(-5deg);
+  }
+  25% {
+    transform:  rotate(-10deg);
+  }
+  38%{
+    transform: rotate(-5deg);
+  }
+  50%{
+    transform: rotate(0deg);
+  }
+  62%{
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+  88% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform:  rotate(0px);
+  }
+}
+
+
+ */
+
