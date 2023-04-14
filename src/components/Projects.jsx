@@ -7,20 +7,14 @@ import "./Projects.css"
 import 'animate.css';
 
 const sortProjectsByWeight = (projectsData) => {
-  return projectsData.sort((a, b) => {
-    if (a.weight - b.weight) {
-      return -1;
-    }
-    if (b.weight - a.weight) {
-      return 1;
-    }
-    return 0;
-  });
+  return projectsData.sort((a, b) => b.weight - a.weight);
 }
+
 const Projects = () => {
   const [visibleProjects, setVisibleProjects] = useState(sortProjectsByWeight(projectsData));
   const [activeItem, setActiveItem] = useState('All')
   const tags = ['All', 'React', 'Node', 'Web3.js'];
+
   const handleChangeTagProject = (tag) => {
     if (tag === 'All') {
       setVisibleProjects(projectsData);
