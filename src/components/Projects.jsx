@@ -33,7 +33,7 @@ const Projects = () => {
           <h1 className="headline">Projects</h1>
         </div>
         <Row>
-          <Col>
+          <Col sm={12}>
             <div className="tags-container">
               {tags.map((tag, index) => (
                 <div className={activeItem === tag ? 'tag-button tag-button-active' : 'tag-button'} onClick={() => handleChangeTagProject(tag)}>

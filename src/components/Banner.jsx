@@ -80,7 +80,7 @@ const Banner = () => {
     <section className="banner" id="home">
       <Container>
         <Row className="align-items-center">
-          <Col xs={12} md={6} xl={7}>
+          <Col xs={12} md={6} xl={7} className="healines-wrapper">
             <div>
               <h1>{`Hello, I am Andrea `}
                 <div className="wrap">{text}</div>
@@ -102,7 +102,7 @@ const Banner = () => {
               </div>
             </div>
           </Col>
-          <Col xs={12} md={6} xl={5}>
+          <Col xs={12} md={6} xl={5} className="rotating-logo-wrapper">
             <img className="rotating-logo" src={logo} alt="Header img" />
           </Col>
         </Row>

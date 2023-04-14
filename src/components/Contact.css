@@ -87,3 +87,12 @@
 .contact form button:hover::before {
   width: 100%;
 }
+
+
+@media (max-width: 991px) {
+  .contact {
+    height: auto;
+  }
+
+
+}

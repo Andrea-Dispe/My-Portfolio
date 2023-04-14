@@ -31,22 +31,23 @@
 }
 
 .project .thumb img {
-  width: 520px;
+  max-width: 520px;
+  min-width: 150px;
   /* height: 390px; */
   max-height: 390px;
   border-radius: 15px;
-  box-shadow: 0px 0px 20px 0px rgba(255,255,255,0.2);
+  box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.2);
 }
 
 .project .github-icon {
   margin-left: 10px;
   width: 30px;
-  transition: width 0.2s linear ;
+  transition: width 0.2s linear;
 
 }
 
 .project .github-icon:hover {
-  transition: width 0.2s linear ;
+  transition: width 0.2s linear;
   width: 35px;
 }
 
@@ -186,4 +187,45 @@
   width: 35%;
   right: 0;
   z-index: -4;
+}
+
+
+.project .info-wrapper {
+  font-size: 20px;
+  line-height: 40px;
+  margin: 20px 50px;
+}
+
+.project .info-wrapper .subtitle {
+  font-weight: bold;
+}
+
+
+@media (max-width: 991px) {
+  .project {
+    flex-wrap: wrap;
+    padding-top: 10px;
+  }
+
+  .project .info-wrapper {
+    order: 1;
+    font-size: 12px;
+    line-height: 14px;
+    margin: 5px 10px;
+  }
+
+  .project .info-wrapper .title {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+
+  .project .info-wrapper .subtitle {
+    margin-bottom: 4px;
+  }
+
+  .project .thumb {
+    order: 2;
+  }
+
+
 }
