@@ -8,20 +8,6 @@ nav.navbar {
   transition: 0.40s ease-in-out;
 }
 
-@media (max-width: 991px) {
-  nav.navbar {
-    position: relative;
-  }
-  .navbar-collapsed {
-    order: 3;
-  }
-  .navbar-text {
-    order: 2;
-  }
-  .container{
-    padding: 0px ;
-  }
-}
 
 nav.navbar.scrolled {
   padding: 0px 0;
@@ -192,3 +178,18 @@ nav.navbar .connect {
   border-radius: 10px;
 }
 
+
+@media (max-width: 991px) {
+  nav.navbar {
+    position: relative;
+  }
+  .navbar-collapsed {
+    order: 3;
+  }
+  .navbar-text {
+    order: 2;
+  }
+  .container{
+    padding: 0px ;
+  }
+}

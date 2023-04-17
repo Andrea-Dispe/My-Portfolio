@@ -44,7 +44,6 @@ const NavBar = () => {
             <Nav.Link href="#home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Home</Nav.Link>
             <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Projects</Nav.Link>
             <Nav.Link href="#contact" className={activeLink === 'contact' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('contact')}>Contact Me</Nav.Link>
-
           </Nav>
         </Navbar.Collapse>
 
@@ -53,36 +52,10 @@ const NavBar = () => {
             <a href="https://www.linkedin.com/in/andrea-dispe" target="_blank"><img src={linkedin} alt="linkedin social account that links to my linkedin profile" /></a>
             <a href="https://github.com/Andrea-Dispe" target="_blank"><img src={github} alt="github social icon that links to my github profile" /></a>
           </div>
-          <Nav.Link className='connect' href="#contact">Let's Connect!</Nav.Link>
+            {/* <Nav.Link className='connect' href="#contact">Let's Connect!</Nav.Link> */}
         </span>
       </Container>
     </Navbar>
-
-
-
-    // <Navbar expand="sm" className={scrolled ? 'scrolled' : ''}>
-    //   <Container>
-
-    //     <Navbar.Toggle>
-    //       <span className="navbar-toggle-icon"></span>
-    //     </Navbar.Toggle>
-
-    //     <Navbar.Collapse id="basic-navbar-nav">
-    //       <Nav className="me-auto">
-    //         <Nav.Link href="#home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Home</Nav.Link>
-    //         <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Projects</Nav.Link>
-    //         <Nav.Link href="#contact" className={activeLink === 'contact' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('contact')}>Contact Me</Nav.Link>
-    //       </Nav>
-    // <span className="navbar-text">
-    //   <div className="social-icon">
-    //     <a href="https://www.linkedin.com/in/andrea-dispe" target="_blank"><img src={linkedin} alt="linkedin social account that links to my linkedin profile" /></a>
-    //     <a href="https://github.com/Andrea-Dispe" target="_blank"><img src={github} alt="github social icon that links to my github profile" /></a>
-    //   </div>
-    //   <Nav.Link className='connect' href="#contact">Let's Connect!</Nav.Link>
-    // </span>
-    //     </Navbar.Collapse>
-    //   </Container>
-    // </Navbar>
   );
 }
 

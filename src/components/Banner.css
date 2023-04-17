@@ -184,6 +184,7 @@
 
   .banner h1 {
     font-size: 40px;
+    text-align: center;
     margin-top: 30px;
   }
 
@@ -207,10 +208,11 @@
   .rotating-logo-wrapper {
     order: 1;
     width: 100%;
+    display: none !important;;
   }
 
   .banner img.rotating-logo {
-    animation: logosLeftRight 5s linear infinite;
+    /* animation: logosLeftRight 5s linear infinite; */
     width: 40px;
     position: relative;
     left: -20px;
@@ -219,7 +221,9 @@
   }
 
   .cta-see-projects span {
-    top: 15px;
+    top: 35px;
+    animation: scrollArrow 1s infinite;
+
   }
 }
 

@@ -4,7 +4,7 @@
   padding: 20px 0;
   margin-bottom: 20px;
   display: flex;
-  height: 540px;
+  min-height: auto;
   background-color: black;
 }
 
@@ -201,6 +201,8 @@
 }
 
 
+
+
 @media (max-width: 991px) {
   .project {
     flex-wrap: wrap;
@@ -209,8 +211,8 @@
 
   .project .info-wrapper {
     order: 1;
-    font-size: 12px;
-    line-height: 14px;
+    font-size: 20px;
+    line-height: 17px;
     margin: 5px 10px;
   }
 
@@ -225,7 +227,14 @@
 
   .project .thumb {
     order: 2;
+    padding: 20px;
   }
 
 
+}
+
+@media (max-width: 768px) {
+  .project .info-wrapper {
+    font-size: 12px;
+  }
 }
