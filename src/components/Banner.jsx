@@ -8,6 +8,7 @@ import NodeLogo from "../assets/img/nodejs.svg"
 import ReduxLogo from "../assets/img/redux.svg"
 import CV from "../assets/Disperati-Andrea-CV.pdf"
 import PdfIcon from "../assets/img/pdf-icon.svg"
+// import { useTranslation } from "react-i18next";
 
 import "./Banner.css";
 import "animate.css";
@@ -16,13 +17,15 @@ const Banner = () => {
   const [loopNumber, setLoopNumber] = useState(0);
   const [rotateLoopNumber, setRortateLoopNumber] = useState(1);
   const [logo, setLogo] = useState(JsLogo)
-  const [vis, setVis] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false)
   const toRotate = ["Full-Stack Dev", "Web Designer"]
   const logoToRotateArray = [JsLogo, PhpLogo, ReactLogo, NodeLogo, ReduxLogo]
   const [text, setText] = useState("")
   const period = 2000
   const [delta, setDelta] = useState(300 - Math.random() * 100)
+  // const { t } = useTranslation();
+
+
 
 
   useEffect(() => {
@@ -86,8 +89,8 @@ const Banner = () => {
                 <div className="wrap">{text}</div>
               </h1>
               <div className="tech-skills-container">
-                {logoToRotateArray.map(icon => (
-                  <img src={icon} alt="icon tech skill" className="tech-skills-icon" />
+                {logoToRotateArray.map((icon, index) => (
+                  <img key={index} src={icon} alt="icon tech skill" className="tech-skills-icon" />
                 ))}
               </div>
               <div className="curriculum-download">Download my Curriculum

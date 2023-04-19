@@ -3,11 +3,12 @@ import github from "../assets/img/github.svg"
 import './ProjectCard.css'
 
 const ProjectCard = ({ project, index }) => {
+
   return (
     <div key={index} className="project">
       <div className="thumb">
-        <a href={project.projectShowUrl} target='_blank'>
-          <img src={project.imgUrl  } alt={project.title} />
+        <a href={project.projectShowUrl} target='_blank' rel="noopener noreferrer">
+          <img src={require(`../assets/img/${project.imageUrl}`)} alt={project.title} />
         </a>
       </div>
       <div className="info-wrapper">
@@ -25,7 +26,7 @@ const ProjectCard = ({ project, index }) => {
         <div className="tags">
           <span className="subtitle">Tech Stack: </span>
           {project.tags.map((tag, index) => (
-            (index === project.tags.length - 1 ? <span>{tag}</span> : <span>{tag}, </span>)
+            (index === project.tags.length - 1 ? <span key={index}>{tag}</span> : <span key={index}>{tag}, </span>)
           ))}
         </div>
         <div className="subtitle">View Project:

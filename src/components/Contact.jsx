@@ -30,7 +30,7 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { firstName, lastName, email, phone, message } = formDetails;
+    const { firstName, email, message } = formDetails;
 
     if (!firstName) {
       dispatchAddNotification({ result: "ERROR", message: 'First name is required' })
