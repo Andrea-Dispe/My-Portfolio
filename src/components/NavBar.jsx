@@ -6,6 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import i18next from "i18next";
+import { useTranslation } from "react-i18next";
 
 import linkedin from '../assets/img/linkedin.svg'
 import github from '../assets/img/github.svg'
@@ -15,6 +16,8 @@ import './NavBar.css';
 const NavBar = ({setLang}) => {
   const [activeLink, setActiveLink] = useState('home')
   const [scrolled, setScrolled] = useState(false)
+    const { t } = useTranslation();
+
 
   useEffect(() => {
     const onScroll = () => {
@@ -32,6 +35,10 @@ const NavBar = ({setLang}) => {
   const onUpdateActiveLink = (value) => {
     setActiveLink(value)
   }
+
+  useEffect(() => {
+    console.log('fsdfsdfsd', t("projects"))
+  } , [])
 
   const flags = [{
     code: 'en',
@@ -53,9 +60,9 @@ const NavBar = ({setLang}) => {
 
         <Navbar.Collapse id="basic-navbar-nav" className="navbar-collapsed">
           <Nav className="me-auto">
-            <Nav.Link href="#home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Home</Nav.Link>
-            <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Projects</Nav.Link>
-            <Nav.Link href="#contact" className={activeLink === 'contact' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('contact')}>Contact Me</Nav.Link>
+            <Nav.Link href="#home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>{t("home")}</Nav.Link>
+            <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>{t("projects")}</Nav.Link>
+            <Nav.Link href="#contact" className={activeLink === 'contact' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('contact')}>{t("contact_me")}</Nav.Link>
           </Nav>
         </Navbar.Collapse>
 
@@ -65,11 +72,9 @@ const NavBar = ({setLang}) => {
               id="dropdown-button-dark"
               variant="secondary"
               menuVariant="dark"
-            title="en"
-            // className="mt-2"
+               title="en"
             >
               {flags.map(({ code, name, country_code }) => (
-                // <div>d</div>
                 <Dropdown.Item
                   key={code}
                   onClick={() => {
@@ -91,7 +96,7 @@ const NavBar = ({setLang}) => {
             <a href="https://www.linkedin.com/in/andrea-dispe" target="_blank" rel="noopener noreferrer"><img src={linkedin} alt="linkedin social account that links to my linkedin profile" /></a>
             <a href="https://github.com/Andrea-Dispe" target="_blank" rel="noopener noreferrer"><img src={github} alt="github social icon that links to my github profile" /></a>
           </div>
-          <Nav.Link className='connect' href="#contact">Let's Connect!</Nav.Link>
+          <Nav.Link className='connect' href="#contact">{t('lets_connect')}</Nav.Link>
         </span>
       </Container>
     </Navbar>

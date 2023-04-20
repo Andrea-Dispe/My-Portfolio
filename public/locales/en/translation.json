@@ -1,5 +1,25 @@
 {
-  "Welcome_to_React": "Welcome to React and react-i18next",
-  "rick_desc": "This app has been built without exeternal libraries."
-
+  "home": "Home",
+  "projects": "Projects",
+  "contact_me": "Contact me",
+  "lets_connect": "Let's Connect!",
+  "download_resume": "Download my Resume",
+  "scroll_projects": "Scroll down to see some of my projects",
+  "hello": "Hello, I am Andrea ",
+  "description": "Description",
+  "tech_stack": "Tech Stack",
+  "view_project": "View Project",
+  "source_code": "Source Code",
+  "get_in_touch": "Get in Touch",
+  "first_name": "First Name",
+  "last_name": "Last Name",
+  "email": "Email",
+  "phone_num": "Phone Number",
+  "message": "Message",
+  "send": "Send",
+  "email_sent": "Email sent succesfully!",
+  "email_not_sent": "Something went wrong!",
+  "first_name_required": "First name is required",
+  "email_required": "An email is required",
+  "message_required": "A message is required"
 }

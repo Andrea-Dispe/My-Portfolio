@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import colorSharp2 from "../assets/img/color-sharp2.png"
 import ProjectCard from "./ProjectCard"
-// import { useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import "./Projects.css"
 import 'animate.css';
 
@@ -23,6 +23,7 @@ const Projects = ({ projects }) => {
   const [visibleProjects, setVisibleProjects] = useState([]);
   const [activeItem, setActiveItem] = useState('All')
   const tags = ['All', 'React', 'Node', 'Web3.js'];
+  const {t} = useTranslation()
 
   const handleChangeTagProject = (tag) => {
     if (tag === 'All') {
@@ -46,7 +47,7 @@ const Projects = ({ projects }) => {
     <section className='projects' id='projects'>
       <Container>
         <div className='headline-wrapper'>
-          <h1 className="headline">Projects</h1>
+          <h1 className="headline">{t("projects")}</h1>
         </div>
         <Row>
           <Col sm={12}>

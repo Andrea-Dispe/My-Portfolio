@@ -8,7 +8,7 @@ import NodeLogo from "../assets/img/nodejs.svg"
 import ReduxLogo from "../assets/img/redux.svg"
 import CV from "../assets/Disperati-Andrea-CV.pdf"
 import PdfIcon from "../assets/img/pdf-icon.svg"
-// import { useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 import "./Banner.css";
 import "animate.css";
@@ -23,7 +23,7 @@ const Banner = () => {
   const [text, setText] = useState("")
   const period = 2000
   const [delta, setDelta] = useState(300 - Math.random() * 100)
-  // const { t } = useTranslation();
+  const { t } = useTranslation();
 
 
 
@@ -85,7 +85,7 @@ const Banner = () => {
         <Row className="align-items-center">
           <Col xs={12} md={6} xl={7} className="healines-wrapper">
             <div>
-              <h1>{`Hello, I am Andrea `}
+              <h1>{t('hello')}
                 <div className="wrap">{text}</div>
               </h1>
               <div className="tech-skills-container">
@@ -93,12 +93,12 @@ const Banner = () => {
                   <img key={index} src={icon} alt="icon tech skill" className="tech-skills-icon" />
                 ))}
               </div>
-              <div className="curriculum-download">Download my Curriculum
+              <div className="curriculum-download">{t("download_resume")}
                 <a href={CV} download>
                   <img className="pdf-icon" src={PdfIcon} alt="pdf-icon" />
                 </a>
               </div>
-              <div className="cta-see-projects">Scroll down to see some of my projects
+              <div className="cta-see-projects">{t("scroll_projects")}
                 <Nav.Link href="#projects">
                   <span></span>
                 </Nav.Link>
