@@ -1,14 +1,17 @@
 import React, { useState, useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
 import emailjs from '@emailjs/browser';
 import { useAddNotification } from './Notifications/NotificationProvider';
 import contactImg from '../assets/img/contact-img.svg'
+import config from '../config'
 import './Contact.css'
 
 
-const Contact = () => {
+const Contact = ({ lang }) => {
   const form = useRef()
   const dispatchAddNotification = useAddNotification();
+  const { t } = useTranslation()
 
   const formInitialDetails = {
     firstName: '',
@@ -19,7 +22,7 @@ const Contact = () => {
   }
 
   const [formDetails, setFormDetails] = useState(formInitialDetails)
-  const [buttonText, setButtontext] = useState('Send')
+  const [buttonText, setButtontext] = useState(lang === 'en' ? 'Send' : 'Invia')
 
   const onFormUpdate = (category, value) => {
     setFormDetails({
@@ -30,31 +33,32 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { firstName, lastName, email, phone, message } = formDetails;
+    const { firstName, email, message } = formDetails;
 
     if (!firstName) {
-      dispatchAddNotification({ result: "ERROR", message: 'First name is required' })
+      dispatchAddNotification({ result: "ERROR", message: t("first_name_required") })
       return;
     } else if (!email) {
-      dispatchAddNotification({ result: "ERROR", message: 'An email address is required' })
+      dispatchAddNotification({ result: "ERROR", message: t("email_required") })
       return;
     } else if (!message) {
-      dispatchAddNotification({ result: "ERROR", message: 'A short message is required' })
+      dispatchAddNotification({ result: "ERROR", message: t("message_required") })
       return;
     }
 
     setButtontext('Sending...')
-    emailjs.sendForm('service_tt3adfi', 'template_7pf68ki', form.current, 'w6qDx-AE1Fi2nMrIY')
+    emailjs.sendForm( config.emailServiceID, config.emailTemplateID, form.current, config.emailPublicKey)
+    // emailjs.sendForm('service_tt3adfi', 'template_7pf68ki', form.current, 'w6qDx-AE1Fi2nMrIY')
+
       .then((res) => {
-        console.log('res',res);
         setButtontext('Send');
 
         // clean form
         setFormDetails(formInitialDetails)
         if (res.text === 'OK') {
-          dispatchAddNotification({ result: "SUCCESS", message: 'Email sent succesfully!' });
+          dispatchAddNotification({ result: "SUCCESS", message: t("email_sent") });
         } else {
-          dispatchAddNotification({ result: "ERROR", message: 'Something went wrong!' });
+          dispatchAddNotification({ result: "ERROR", message: t("email_not_sent") });
 
         }
       }, (error) => {
@@ -71,23 +75,23 @@ const Contact = () => {
             <img src={contactImg} alt="Contact me" />
           </Col>
           <Col md={6} >
-            <h2>Get in Touch</h2>
+            <h2>{t("get_in_touch")}</h2>
             <form ref={form} onSubmit={handleSubmit}>
               <Row>
                 <Col sm={6} className="px-1">
-                  <input type="text" value={formDetails.firstName} placeholder="First Name" name="first_name" onChange={e => onFormUpdate('firstName', e.target.value)} />
+                  <input type="text" value={formDetails.firstName} placeholder={t("first_name")} name="first_name" onChange={e => onFormUpdate('firstName', e.target.value)} />
                 </Col>
                 <Col sm={6} className="px-1">
-                  <input type="text" value={formDetails.lastName} placeholder="Last Name" name="last_name" onChange={e => onFormUpdate('lastName', e.target.value)} />
+                  <input type="text" value={formDetails.lastName} placeholder={t("last_name")} name="last_name" onChange={e => onFormUpdate('lastName', e.target.value)} />
                 </Col>
                 <Col sm={6} className="px-1">
-                  <input type="email" value={formDetails.email} placeholder="Email Address" name="email" onChange={e => onFormUpdate('email', e.target.value)} />
+                  <input type="email" value={formDetails.email} placeholder={t("email")} name="email" onChange={e => onFormUpdate('email', e.target.value)} />
                 </Col>
                 <Col sm={6} className="px-1">
-                  <input type="tel" value={formDetails.phone} placeholder="Phone no." name="phone_number" onChange={e => onFormUpdate('phone', e.target.value)} />
+                  <input type="tel" value={formDetails.phone} placeholder={t("phone_num")} name="phone_number" onChange={e => onFormUpdate('phone', e.target.value)} />
                 </Col>
                 <Col sm={12} className="px-1">
-                  <textarea row="6" value={formDetails.message} placeholder="Message" name="message" onChange={e => onFormUpdate("message", e.target.value)} />
+                  <textarea row="6" value={formDetails.message} placeholder={t("message")} name="message" onChange={e => onFormUpdate("message", e.target.value)} />
                   <button type='submit' className="send" ><span>{buttonText}</span></button>
                 </Col>
               </Row>

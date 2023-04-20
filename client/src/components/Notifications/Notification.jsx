@@ -6,7 +6,6 @@ import { ImCross } from "react-icons/im";
 
 
 const Notification = (props) => {
-  console.log('props: ', props);
   const [width, setWidth] = useState(0);
   const [intervalID, setIntevalID] = useState(null)
   const [exit, setExit] = useState(false)
