@@ -51,7 +51,6 @@ exports.saveTranslation = async (req, res) => {
   } catch (error) {
     console.error(error)
   }
-  console.log('existingTranslation: ', existingTranslation);
 
   if (existingTranslation && existingTranslation.lang === lang) {
     return res.send(`sorry there already exist a translation with the title ${translation.title}`)
@@ -86,14 +85,12 @@ exports.editTranslation = async (req, res) => {
     console.error(error)
   }
 
-  console.log('translation: ', translation);
   // edit
   if (translation) {
     const editKeys = Object.entries(edit)
     const translationKeys = Object.entries(translation);
 
     for (const [key, value] of Object.entries(translation)) {
-      console.log(`${key}: ${value}`);
     }
   }
 
@@ -113,7 +110,6 @@ exports.deleteAllTranslations = async (req, res) => {
 
 exports.deleteTranslationByLang = async (req, res) => {
   const { lang } = req.params
-  let deletedCount;
   try {
     documents = await Translation.deleteMany({ lang })
   } catch (error) {

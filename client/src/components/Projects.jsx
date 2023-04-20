@@ -9,7 +9,6 @@ import 'animate.css';
 
 
 const sortProjectsByWeight = (projects) => {
-  console.log('projects: ', projects);
   if (projects.length > 0) {
     return projects.sort((a, b) => b.weight - a.weight);
   } else {

@@ -20,7 +20,6 @@ export const getUserLanguage = () => {
   // session storage language
   const sessionStorageLang = sessionStorage.getItem('i18nextLng')
 
-  console.log({langCookie, htmlLang, localStorageLang, sessionStorageLang } );
 
   if (langCookie) {
     return langCookie

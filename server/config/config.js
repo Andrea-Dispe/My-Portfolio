@@ -14,6 +14,5 @@ if (config.env === 'Production') {
   config.api = process.env.PROD_API
 };
 
-console.log('config: ', config);
 
 module.exports = config

@@ -11,7 +11,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const addImagesThumbs = (projects) => {
   return projects.map(project => {
-    console.log('project: ', project);
 
     return project
   })
@@ -20,12 +19,15 @@ const addImagesThumbs = (projects) => {
 
 function App() {
   const { api } = config
+  console.log('config in client: ', config);
+  console.log('api in client: ', api);
+
   const [lang, setLang] = useState(getUserLanguage())
   const [projects, setProjects] = useState([])
 
   useEffect(() => {
     document.querySelector('html').lang = lang
-    axios.get(`${api}/translations//get/${lang}`)
+    axios.get(`${api}/translations/get/${lang}`)
       .then(result => {
         const projects = addImagesThumbs(result.data.translations)
         setProjects(projects)

@@ -36,10 +36,6 @@ const NavBar = ({setLang}) => {
     setActiveLink(value)
   }
 
-  useEffect(() => {
-    console.log('fsdfsdfsd', t("projects"))
-  } , [])
-
   const flags = [{
     code: 'en',
     name: 'english',

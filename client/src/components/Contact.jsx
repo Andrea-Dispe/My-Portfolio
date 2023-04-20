@@ -9,7 +9,6 @@ import './Contact.css'
 
 
 const Contact = ({ lang }) => {
-  console.log('config: ', config);
   const form = useRef()
   const dispatchAddNotification = useAddNotification();
   const { t } = useTranslation()
@@ -52,7 +51,6 @@ const Contact = ({ lang }) => {
     // emailjs.sendForm('service_tt3adfi', 'template_7pf68ki', form.current, 'w6qDx-AE1Fi2nMrIY')
 
       .then((res) => {
-        console.log('res', res);
         setButtontext('Send');
 
         // clean form
