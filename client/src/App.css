@@ -27,6 +27,8 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 75px;
+  overflow-x: hidden;
+
 }
 
 body {
@@ -36,6 +38,7 @@ body {
   background-color: #000 !important;
   color: #fff !important;
   font-family: 'Centra', sans-serif !important;
+  min-width: 300px;
 }
 
 h1,

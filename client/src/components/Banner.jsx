@@ -100,7 +100,7 @@ const Banner = () => {
               </div>
               <div className="cta-see-projects">{t("scroll_projects")}
                 <Nav.Link href="#projects">
-                  <span></span>
+                  <div></div>
                 </Nav.Link>
               </div>
             </div>

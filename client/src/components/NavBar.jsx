@@ -4,7 +4,6 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
 import i18next from "i18next";
 import { useTranslation } from "react-i18next";
 
@@ -13,10 +12,10 @@ import github from '../assets/img/github.svg'
 import './NavBar.css';
 
 
-const NavBar = ({setLang}) => {
+const NavBar = ({ setLang, lang}) => {
   const [activeLink, setActiveLink] = useState('home')
   const [scrolled, setScrolled] = useState(false)
-    const { t } = useTranslation();
+  const { t } = useTranslation();
 
 
   useEffect(() => {
@@ -46,6 +45,18 @@ const NavBar = ({setLang}) => {
     country_code: 'it'
   }]
 
+  const getCurrentLanguageName = () => {
+    let currentLanguageName = ''
+    flags.forEach(flag => {
+      if(flag.code === lang) {
+        console.log({flagCode:flag.code, lang});
+        currentLanguageName = flag.name
+      }
+    })
+    console.log('currentLanguageName: ', currentLanguageName);
+    return currentLanguageName
+  }
+
   return (
 
     <Navbar expand="lg" className={scrolled ? 'scrolled' : ''}>
@@ -64,28 +75,32 @@ const NavBar = ({setLang}) => {
 
         <span className="navbar-text">
           <div>
-            <DropdownButton
-              id="dropdown-button-dark"
-              variant="secondary"
-              menuVariant="dark"
-               title="en"
-            >
-              {flags.map(({ code, name, country_code }) => (
-                <Dropdown.Item
-                  key={code}
-                  onClick={() => {
-                    i18next.changeLanguage(code)
-                    setLang(code)
-                  }}
-                >
-                  <span className={`flag-icon flag-icon-${country_code}`}></span>
-                  {country_code}
-                </Dropdown.Item>
-              ))}
+            <Dropdown>
+              <Dropdown.Toggle id="dropdown-basic" style={{ backgroundColor: "#323232", border: 'none' }}>
+                {getCurrentLanguageName()}
+              </Dropdown.Toggle>
 
+              <Dropdown.Menu
+                id="dropdown-menu"
+                style={{ padding: "5px 0px", backgroundColor: "#fff" }}
+              >
+                {flags.map(({ code, name, country_code }) => (
+                  <Dropdown.Item
+                    key={code}
+                    onClick={() => {
+                      i18next.changeLanguage(code)
+                      setLang(code)
+                    }}
+                    id="dropdown-item"
+                    style={{ padding: '5px 10px', color: "#000" }}
+                  >
 
-
-            </DropdownButton>
+                    <span className={`flag-icon flag-icon-${country_code}`} style={{ marginRight: "5px" }}></span>
+                    {country_code}
+                  </Dropdown.Item>
+                ))}
+              </Dropdown.Menu>
+            </Dropdown>
           </div>
 
           <div className="social-icon">

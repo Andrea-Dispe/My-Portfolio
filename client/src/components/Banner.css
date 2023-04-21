@@ -100,7 +100,7 @@
 .cta-see-projects {
   font-size: 20px;
   margin-top: 20px;
-  position: relative;
+  display: flex;
 }
 
 .curriculum-download {
@@ -116,22 +116,16 @@
 
 
 .pdf-icon:hover {
-
   animation: pdfIcon 0.3s forwards;
   /* animation-fill-mode: forwards; */
   animation-iteration-count: 2;
-
-
 }
 
 
-.cta-see-projects span {
-  position: absolute;
-  top: -6px;
-  left: 50%;
+.cta-see-projects div {
   width: 21px;
   height: 21px;
-  margin-left: -5px;
+  margin-left: 15px;
   border-left: 4px solid #fff;
   border-bottom: 4px solid #fff;
   transform: rotate(-45deg);
@@ -200,7 +194,9 @@
     order: 2;
   }
 
-  .tech-skills-container, .cta-see-projects , .curriculum-download {
+  .tech-skills-container,
+  .cta-see-projects,
+  .curriculum-download {
     justify-content: center;
     text-align: center;
   }
@@ -208,7 +204,8 @@
   .rotating-logo-wrapper {
     order: 1;
     width: 100%;
-    display: none !important;;
+    display: none !important;
+    ;
   }
 
   .banner img.rotating-logo {

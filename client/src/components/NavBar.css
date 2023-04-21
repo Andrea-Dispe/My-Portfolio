@@ -97,6 +97,11 @@ span.navbar-text {
   z-index: 1;
 }
 
+#dropdown-menu {
+  padding: "0px";
+  background-color: "#323232";
+}
+
 .navbar-text .connect::before {
   content: "";
   width: 0%;
@@ -192,4 +197,15 @@ nav.navbar .connect {
   .container{
     padding: 0px ;
   }
+
+.navbar-text .connect {
+display: none;
+  padding: 10px 5px;
+  font-size: 15px;
+  margin-left: 5px;
+  position: relative;
+  background-color: transparent;
+  transition: 0.3s ease-in-out;
+}
+
 }
