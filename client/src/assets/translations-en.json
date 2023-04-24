@@ -68,29 +68,6 @@
       "created_at": "2023-04-19T23:17:59.000Z",
       "updated_at": "2023-04-19T23:17:59.000Z",
       "__v": 0
-    },
-    {
-      "_id": "644077022e19e6dbe9eae0fd",
-      "lang": "en",
-      "title": "My DeFi App",
-      "description": "This is a cryptocurrency app that emulates the Alpaca Fince DeFi Protocol in lending, staking and yield farming.",
-      "features": [
-        "It connects to the lending currently available in pancake swap.",
-        "It connects to the staking currently available in pancake swap.",
-        "It connects to the farming pool currently available in pancake swap.",
-        "It connects the Metamask wallet to the Bsc (Binance Smart Chain)"
-      ],
-      "tags": [
-        "React",
-        "Web3.js"
-      ],
-      "sourceCodeUrl": "https://github.com/Andrea-Dispe/My_DeFi",
-      "projectShowUrl": "https://my-defi-app.andreadispe.dev",
-      "imageUrl": "my-defi-thumb.gif",
-      "weight": 9,
-      "created_at": "2023-04-19T23:19:30.000Z",
-      "updated_at": "2023-04-19T23:19:30.000Z",
-      "__v": 0
     }
   ]
 }

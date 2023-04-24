@@ -1,29 +1,6 @@
 {
   "translations": [
     {
-      "_id": "64407e072e19e6dbe9eae106",
-      "lang": "it",
-      "title": "My DeFi App",
-      "description": "Questa è una crypto app che emula il protocollo DeFi di Alpaca Finance in lending, staking e yild farming",
-      "features": [
-        "Si connette a tutti i lending pool attualmente dsiponibili in Pancake Swap.",
-        "Si connette a tutti gli staking pool attualmente disponibili in Pancake Swap.",
-        "Si connette alle farming pool attualmente disponibili in Pancake Swap.",
-        "Si Connette a Metamask wallet sulla Bsc (Binance Smart Chain)"
-      ],
-      "tags": [
-        "React",
-        "Web3.js"
-      ],
-      "sourceCodeUrl": "https://github.com/Andrea-Dispe/My_DeFi",
-      "projectShowUrl": "https://my-defi-app.andreadispe.dev",
-      "imageUrl": "my-defi-thumb.gif",
-      "weight": 9,
-      "created_at": "2023-04-19T23:49:27.000Z",
-      "updated_at": "2023-04-19T23:49:27.000Z",
-      "__v": 0
-    },
-    {
       "_id": "6440ecd194aa872155bff683",
       "lang": "it",
       "title": "My Portflio App",
